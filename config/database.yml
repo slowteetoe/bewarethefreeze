@@ -54,7 +54,10 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: bewarethefreeze
+  database: <%= ENV['RDS_DATABASE'] %>
   pool: 5
-  username: bewarethefreeze
-  password: p4ssw0rd
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: bewarethefreeze.cgrliy3db4xp.us-west-1.rds.amazonaws.com
+  port: 5432
+
