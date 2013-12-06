@@ -1,0 +1,7 @@
+<% if @error %>
+$("#errorMessage").html("<%= raw escape_javascript("You must provide a valid zipcode") %>")
+$("#errorMessage").show()
+<% else %>
+$("#errorMessage").html("<%= raw escape_javascript(render :partial => "success") %>")
+$("#errorMessage").show()
+<% end %>

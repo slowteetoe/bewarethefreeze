@@ -1,7 +1,8 @@
 
 <div class="row">
   <div class="small-12 columns">
-    <form>
+    <div data-alert class="alert-box warning radius" id="errorMessage" style="display:none;"></div>
+    <%= form_tag "/alert_subscription/subscribe", method: :post, "data-abide" => '', remote: true %>
       <fieldset>
         <legend>Enter your email and zipcode to receive alerts for the first freeze of the year</legend>
       <div class="row">
@@ -9,7 +10,8 @@
       	  <label for="right-label" class="right inline">Zipcode</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" placeholder="US Zip Codes only" />
+          <input type="text" name="zip" placeholder="5 digit US Zip Codes only" required pattern="\d{5}"/>
+          <small class="error">You must enter a valid 5 digit US Zip Code.</small>
         </div>
       </div>
       <div class="row">
@@ -17,12 +19,13 @@
           <label for="right-label" class="right inline">Email</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" placeholder="someone@somewhere.com" />
+          <input type="text" name="email" placeholder="someone@somewhere.com" required />
+          <small class="error">Please enter a valid email address</small>
         </div>
       </div>
       <div class="row">
         <div class="small-12 columns">
-        	<input type="button" class="button postfix" onclick="alert('Not implemented yet'); return false;" value="Sign me up!" />
+        	<input type="submit" class="button postfix" value="Sign me up!" />
         </div>
       </div>
       </fieldset>
