@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205220438) do
+ActiveRecord::Schema.define(version: 20131206174520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "alert_subscriptions", force: true do |t|
+    t.integer  "location_id"
+    t.string   "email"
+    t.boolean  "active"
+    t.string   "sms"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "alert_subscriptions", ["email"], name: "index_alert_subscriptions_on_email", using: :btree
+  add_index "alert_subscriptions", ["location_id"], name: "index_alert_subscriptions_on_location_id", using: :btree
 
   create_table "locations", force: true do |t|
     t.string   "zip"
