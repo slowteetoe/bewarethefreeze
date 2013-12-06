@@ -32,6 +32,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Use foundation
+gem 'compass-rails'
+gem 'zurb-foundation'
+
+# Use forecast io, don't forget to set your API key env variable, see initializer
 gem 'forecast_io'
 
 gem 'awesome_print'

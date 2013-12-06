@@ -1,4 +1,6 @@
 Bewarethefreeze::Application.routes.draw do
+  get "alert_subscription/subscribe"
+  get "alert_subscription/unsubscribe"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

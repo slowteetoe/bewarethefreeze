@@ -1,14 +1,35 @@
-<h2>Brrrrrrr! Beware the freeze!  Don't let your pipes freeze this winter!</h2>
 
-<p>
-Enter your email and zipcode to receive alerts for the first freeze of the year.
-<form>
-	Zipcode: <input type="text" />
-	Email: <input type="text" />
-	<input type="button" onclick="alert('Not implemented yet'); return false;" value="Sign me up!" />
-</form>
-</p>
+<div class="row">
+  <div class="small-12 columns">
+    <form>
+      <fieldset>
+        <legend>Enter your email and zipcode to receive alerts for the first freeze of the year</legend>
+      <div class="row">
+        <div class="small-3 columns">
+      	  <label for="right-label" class="right inline">Zipcode</label>
+        </div>
+        <div class="small-9 columns">
+          <input type="text" placeholder="US Zip Codes only" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="right-label" class="right inline">Email</label>
+        </div>
+        <div class="small-9 columns">
+          <input type="text" placeholder="someone@somewhere.com" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+        	<input type="button" class="button postfix" onclick="alert('Not implemented yet'); return false;" value="Sign me up!" />
+        </div>
+      </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
 
-<p>If you're in <%= @loc.zip %>, it's currently: <%= @forecast['currently']['temperature'] %>&deg; F</p>
-
-<p>Data provided by <a href="http://www.forecast.io">Forecast</a></p>
+<div class="row">
+  <div class="small-12 columns">If you're in <%= @loc.zip %>, it's currently: <%= @forecast['currently']['temperature'] %>&deg; F</div>
+</div>
