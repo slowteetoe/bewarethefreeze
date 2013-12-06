@@ -6,6 +6,8 @@ Bewarethefreeze::Application.routes.draw do
 
   root 'welcome#index'
 
+  post 'forecast' => 'welcome#forecast'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

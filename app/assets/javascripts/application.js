@@ -17,3 +17,16 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+function onPositionUpdate(position)
+{
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+    var url = '/forecast';
+    $.post(url, {"lat" : lat, "lon" : lon}, function(data, textStatus) {
+      $("#currentTemp").html("Current temp at " + lat + ", " + lon + " is " + data["temp"]);
+    }, "json");
+}
+
+if(navigator.geolocation)
+  navigator.geolocation.getCurrentPosition(onPositionUpdate);
